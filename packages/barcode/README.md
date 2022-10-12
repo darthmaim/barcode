@@ -1,11 +1,21 @@
-# `barcode`
+# `@darthmaim/barcode`
 
-> TODO: description
+Library to validate and format EAN barcodes.
 
 ## Usage
 
 ```
-const barcode = require('barcode');
+import { isValid } from '@darthmaim/barcode/lib/ean13';
 
-// TODO: DEMONSTRATE API
+isValid("4003994155486");
 ```
+
+## Installation
+
+```
+npm i @darthmaim/barcode
+```
+
+## License
+
+**@darthmaim/barcode** is licensed under the [MIT License](./LICENSE).

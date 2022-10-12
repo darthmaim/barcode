@@ -1,11 +1,21 @@
-# `react-barcode`
+# `@darthmaim/react-barcode`
 
-> TODO: description
+React Component to render EAN barcode as svg.
 
 ## Usage
 
 ```
-const reactBarcode = require('react-barcode');
+import { Barcode } from '@darthmaim/react-barcode';
 
-// TODO: DEMONSTRATE API
+<Barcode value="4003994155486"/>
 ```
+
+## Installation
+
+```
+npm i @darthmaim/react-barcode
+```
+
+## License
+
+**@darthmaim/react-barcode** is licensed under the [MIT License](./LICENSE).
