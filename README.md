@@ -6,6 +6,7 @@ Packages to work with EAN barcodes.
 
 * **[@darthmaim/barcode](./packages/barcode)**: Validate and format EAN barcodes.
 * **[@darthmaim/react-barcode](./packages/react-barcode):** React component to render EAN barcodes as svg.
+* **[@darthmaim/react-native-barcode](./packages/react-native-barcode):** React-Native component to render EAN barcodes.
 
 ## Contributing
 
