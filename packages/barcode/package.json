@@ -28,5 +28,9 @@
   },
   "bugs": {
     "url": "https://github.com/darthmaim/barcode/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
