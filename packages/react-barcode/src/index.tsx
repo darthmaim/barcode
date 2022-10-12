@@ -1,37 +1,36 @@
-import { encode, EncodedGroup } from '@darthmaim/barcode/lib/ean13';
+import { encode } from '@darthmaim/barcode';
 import type { FC } from 'react';
 
 interface BarcodeProps {
   value: string;
+  height?: number | 'auto';
   width?: number;
+  flat?: boolean;
 }
 
-export const Barcode: FC<BarcodeProps> = ({ value, width = 113 }) => {
+export const Barcode: FC<BarcodeProps> = ({ value, height = 70, width, flat = false }) => {
   const encoded = encode(value);
 
-  const data = encoded.reduce<{ width: number, groups: ({ left: number, width: number } & EncodedGroup)[] }>(
-    (data, group) => {
-      const width = group.width ?? (group.type !== 'quietZone' ? group.data.length : 0);
-      return ({
-        width: data.width + width,
-        groups: [...data.groups, { ...group, left: data.width, width: width }]
-      })
-    },
-    { width: 0, groups: [] }
-  );
+  let left = 0;
 
   return (
-    <svg viewBox="0 0 113 70" width={width} textAnchor="middle" dominantBaseline="bottom" fontSize={10} fontFamily="monospace">
-      {data.groups.map((group) => (group.type !== 'quietZone' || group.text) && (
-        <g>
-          {group.type !== 'quietZone' && group.data.split('').map((bar, index) => bar === '1' ? (
-            <rect x={group.left + index} y={0} width={1} height={group.type === 'marker' ? 66 : 60}/>
-          ) : null)}
-          {group.text && (
-            <text x={group.left + group.width / 2} y={69}>{group.text}</text>
-          )}
-        </g>
-      ))}
+    <svg viewBox={`0 0 ${encoded.width} 70`} height={height} width={width} textAnchor="middle" dominantBaseline="bottom" fontSize={11} fontFamily="monospace" shapeRendering="crispedges">
+      {encoded.groups.map((group, index) => {
+        const groupElement = (group.type !== 'quietZone' || group.text) && (
+          <g key={index}>
+            {group.type !== 'quietZone' && group.data.split('').map((bar, index) => bar === '1' ? (
+              <rect key={index} x={left + index} y={0} width={1} height={group.type === 'marker' && !flat ? 66 : 60}/>
+            ) : null)}
+            {group.text && (
+              <text x={left + group.width / 2} y={69}>{group.text}</text>
+            )}
+          </g>
+        );
+
+        left += group.width;
+
+        return groupElement;
+      })}
     </svg>
   );
 };
