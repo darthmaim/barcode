@@ -24,7 +24,8 @@
     "url": "git+https://darthmaim@github.com/darthmaim/barcode.git"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
   "bugs": {
     "url": "https://github.com/darthmaim/barcode/issues"
