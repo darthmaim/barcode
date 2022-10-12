@@ -1,0 +1,48 @@
+{
+  "name": "@darthmaim/react-native-barcode",
+  "version": "1.0.0",
+  "description": "Renders EAN barcodes",
+  "keywords": [
+    "react",
+    "barcoded",
+    "ean13",
+    "ean8"
+  ],
+  "author": "darthmaim <git@darthmaim.de>",
+  "homepage": "https://github.com/darthmaim/barcode#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://darthmaim@github.com/darthmaim/barcode.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/darthmaim/barcode/issues"
+  },
+  "dependencies": {
+    "@darthmaim/barcode": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.70.4"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-native": "^0.70.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

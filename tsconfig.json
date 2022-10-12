@@ -6,7 +6,7 @@
     "noLib": false,
     "target": "es2015",
     "sourceMap": true,
-    "lib": ["es2015"],
+    "lib": [],
     "moduleResolution": "Node",
   },
   "exclude": [
