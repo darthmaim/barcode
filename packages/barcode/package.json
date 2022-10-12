@@ -1,6 +1,6 @@
 {
   "name": "@darthmaim/barcode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Verify EAN barcodes",
   "keywords": [
     "barcode",

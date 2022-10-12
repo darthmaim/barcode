@@ -1,6 +1,6 @@
 {
   "name": "@darthmaim/react-barcode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Renders EAN barcodes",
   "keywords": [
     "react",
@@ -32,7 +32,7 @@
     "url": "https://github.com/darthmaim/barcode/issues"
   },
   "dependencies": {
-    "@darthmaim/barcode": "^1.0.1"
+    "@darthmaim/barcode": "^1.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.21"
